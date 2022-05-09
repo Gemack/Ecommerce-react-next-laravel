@@ -1,0 +1,35 @@
+.stat-page{
+    width: 100%;
+    display: flex;
+    .stat-page-container{
+        h3{
+            color: lime;
+            font-size: 2rem;
+        }
+        flex: 6;
+        .income-chart{
+            height: 35rem;
+            width: 90%;
+            margin: auto;
+            
+        }
+        .stat-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            width: 90%;
+            margin: 8rem auto;
+            background: #444;
+            .featureChart{
+                width: 70%;
+            }
+        }
+
+        .top, .center, .bottom, .productList{
+            box-shadow: 2px 4px 10px 1px rgba(66, 66, 66, 0.27);
+            padding: 0.5rem;
+            margin: 1rem;
+            display: flex;
+        }
+       
+    }
+}

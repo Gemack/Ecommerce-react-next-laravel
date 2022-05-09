@@ -1,0 +1,22 @@
+.App.Dark{
+    background: #444;
+    .Table{
+        .table{
+            background: black !important;
+            .tableCell{
+                color:#777
+            }
+        }
+       
+    }
+    .sidebar{
+        background: #444;
+        .center{
+            ul{
+                li{
+                    color:white
+                }
+            }
+        }
+    }
+}

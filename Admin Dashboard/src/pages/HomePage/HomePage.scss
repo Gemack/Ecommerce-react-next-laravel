@@ -1,0 +1,33 @@
+.home{
+    display: flex;
+  .homeContainer{
+    flex: 6;
+    h3{
+        color: lime;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .features{
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        .feature{
+            flex: 1;
+            margin: 0 0.4rem;
+        }
+       
+    }
+  }
+  .Widget-container{
+      display: flex;
+      padding: 20px;
+  }
+  .analysis{
+      display: flex;
+      height: 25rem;
+      padding: 20px;
+      width: 95%;
+  }
+}

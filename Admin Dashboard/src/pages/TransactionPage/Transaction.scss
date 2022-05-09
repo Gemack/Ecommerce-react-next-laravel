@@ -1,0 +1,23 @@
+.transaction-page{
+    width: 100%;
+    display: flex;
+    .transaction-page-container{
+        h3{
+            color: lime;
+            font-size: 2rem;
+        }
+        flex: 6;
+        .top{
+            box-shadow: 2px 4px 10px 1px rgba(143, 142, 142, 0.47);
+            padding: 0.5rem;
+            margin: 1rem;
+         
+        }
+        .list{
+            box-shadow: 2px 4px 10px 1px rgba(66, 66, 66, 0.27);
+        }
+       
+        }
+       
+    
+}

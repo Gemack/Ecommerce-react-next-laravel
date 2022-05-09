@@ -1,0 +1,70 @@
+.container-login{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('../LoginPage/igor-miske-Px3iBXV-4TU-unsplash.jpg') no-repeat center center/cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .formContainer{
+        height: 73vh;
+        width: 30vw;
+        background: rgba(255, 255, 255, 0.5);
+        h1{
+            font-size: 3rem;
+            color: lime;
+            padding: 1rem;
+            margin: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        form{
+            .formInput{
+                width: 90%;
+                margin: 1rem auto;
+                &:last-child{
+                    margin-bottom: 2rem;
+                }
+                label{
+                    display: block;
+                    font-size: 1.5rem;
+                }
+                input{
+                    width: 100%;
+                    padding: 8px;
+                    font-size: 1.4rem;
+                    border: none;
+                    background: inherit;
+                    border-bottom: 3px solid lime;
+                    &:focus{
+                        outline: none;
+                      }
+
+                }
+            }
+            button{
+                display: block;
+                cursor: pointer;
+                width: 95%;
+                margin: 1.5rem auto;
+                height: 50px;
+                font-size: 1.4rem;
+                padding: 2px;
+                border: none;
+                background: lime;
+                color: white;
+                border-radius: 10px;
+                transition: all 2s;
+                &:hover{
+                    background: green;
+                }
+            }
+           
+        }
+        
+    }
+}
