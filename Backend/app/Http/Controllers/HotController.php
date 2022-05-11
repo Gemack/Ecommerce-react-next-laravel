@@ -19,11 +19,7 @@ class HotController extends Controller
         return $product;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, $id)
     {
         $fields = $request->validate([

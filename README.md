@@ -12,3 +12,8 @@ react.
 the Backend of this app was built with Laravel 8 A PHP Framework for building 
 backend application.
 Sanctum was used to provide authentication and access token, Mysql was used for the database
+
+password for Admin Dashboard 
+
+email: test@gmail.com
+password:123

@@ -1,0 +1,70 @@
+.container {
+  margin: 10px 0;
+  background: whitesmoke;
+  height: 60vh;
+}
+.swiperContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.swiperContainerText {
+  text-align: center;
+  flex: 2;
+}
+.swiperContainerText h2 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #333;
+  text-decoration: underline;
+}
+.swiperContainerText h3 {
+  font-size: 2.5rem;
+  color: lime;
+}
+.swiperContainerText p {
+  padding: 0 5rem;
+  font-size: 1.2rem;
+  color: black;
+}
+.img {
+  flex: 1;
+}
+
+.button {
+  background: lime;
+  color: white;
+  margin: 0.8rem 0;
+  padding: 10px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  transition: all 1.3s;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+}
+
+.button:hover {
+  background: green;
+}
+@media (max-width: 600px) {
+  .swiperContainerText h2 {
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: #333;
+  }
+  .swiperContainerText h3 {
+    font-size: 1.25rem;
+    color: lime;
+  }
+  .swiperContainerText p {
+    padding: 0 2rem;
+    font-size: 0.9rem;
+    color: black;
+  }
+  .button {
+    margin: 0.4rem 0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}

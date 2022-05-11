@@ -1,0 +1,106 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: lime;
+  height: 60px;
+  width: 100vw;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.67);
+}
+
+.logo {
+  flex: 1;
+  background: white;
+  text-transform: uppercase;
+  color: lime;
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 97%;
+}
+.navlink {
+  flex: 4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.navlink1,
+.navlink2,
+.navlink3 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: white;
+  transition: all 2s;
+}
+
+.navlink3 {
+  color: #333;
+  z-index: 222;
+}
+.navlink1:hover,
+.navlink2:hover {
+  color: #333;
+  font-size: 1.15rem;
+}
+
+.navlink3 a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 0 15px;
+}
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+.counter {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  font-weight: bold;
+  padding: 4px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .navlink1,
+  .navlink2,
+  .navlink3 {
+    font-size: 0.8rem;
+  }
+  .navlink1:hover,
+  .navlink2:hover {
+    font-size: 0.9rem;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .navlink1,
+  .navlink2,
+  .navlink3 {
+    font-size: 1rem;
+  }
+  .navlink1:hover,
+  .navlink2:hover {
+    font-size: 1.1rem;
+  }
+}
