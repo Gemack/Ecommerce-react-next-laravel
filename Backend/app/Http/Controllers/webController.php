@@ -15,7 +15,7 @@ class webController extends Controller
   }
 
   public function getlatestProduct(){
-    $product= Product::all()->take(12);
+    $product= Product::all()->take(9);
     return $product;
   }
 }

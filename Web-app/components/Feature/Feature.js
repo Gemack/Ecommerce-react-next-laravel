@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const Feature = ({ data }) => {
-  console.log(data);
   const PF = "http://127.0.0.1:8000/";
   return (
     <section className={styles.container}>
@@ -22,11 +21,12 @@ const Feature = ({ data }) => {
           <SwiperSlide key={h.id}>
             <div className={styles.swiperContainer}>
               <div className={styles.swiperContainerText}>
-                <h2>latest discount hot sales</h2>
+                <h2>Trending hot sales</h2>
+                <br />
                 <h3>{h.name}</h3>
                 <p>{h.description}</p>
                 <button className={styles.button}>
-                  <Link href="/"> buy @ 5% discount</Link>
+                  <Link href="/"> buy now</Link>
                 </button>
               </div>
               <div className={styles.img}>

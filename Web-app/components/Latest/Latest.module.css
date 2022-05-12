@@ -1,0 +1,107 @@
+.container {
+  width: 90%;
+  border: 1px solid lime;
+  margin: auto;
+}
+
+.heading {
+  padding-top: 2rem;
+  border-bottom: 0.2rem solid rgba(0, 255, 0, 0.397);
+  margin: 0 auto;
+}
+.heading span {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  display: inline-block;
+  background: lime;
+  border-top-right-radius: 3rem;
+}
+
+.boxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.boxContainer .box {
+  flex: 1 1 15rem;
+  border: 0.1rem solid rgba(0, 255, 0, 0.397);
+  overflow: hidden;
+  position: relative;
+  margin: 1rem 2rem;
+}
+
+.boxContainer .box .image {
+  height: 20rem;
+  padding: 2rem;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+.image img {
+  object-fit: cover;
+}
+
+.info h3 {
+  padding: 1rem;
+  font-size: 2rem;
+  color: lime;
+}
+.subInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-top: 0.1rem solid rgba(0, 255, 0, 0.397);
+}
+.price {
+  font-size: 2rem;
+}
+.boxContainer .box .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxContainer .box .icons {
+  padding: 0.2rem 0.5rem;
+  background: white;
+  margin: 1rem;
+  color: lime;
+  transform: translateY(-15rem);
+  transition-delay: 0.2s;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.boxContainer .box:hover .icons {
+  transform: translateY(0rem);
+}
+
+.icons:hover {
+  color: limegreen;
+}
+
+/* Smartphone */
+@media (max-width: 600px) {
+  .heading span {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .heading span {
+    font-size: 1.5rem;
+  }
+}
