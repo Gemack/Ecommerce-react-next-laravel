@@ -19,6 +19,7 @@
   justify-content: center;
   height: 30%;
   width: 10%;
+  margin: 1rem;
 }
 .container h3 {
   color: white;
@@ -33,15 +34,20 @@
 
 .social {
   flex: 2;
-  background: red;
 }
 .cat {
   flex: 2;
-  background: blue;
 }
 
-.socialLinks ul li a {
+.socialLinks li a {
   display: flex;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 1s;
+}
+
+.socialLinks li a span:last-child {
+  margin: 0 1rem;
 }
 .catLink li {
   transition: all 1s;
@@ -57,4 +63,30 @@
   transition: all 1s;
   text-transform: uppercase;
   font-weight: 500;
+}
+/* Smartphone */
+@media (max-width: 600px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+  }
+  .logo {
+    flex: 1;
+    width: 80%;
+    padding: 0.4rem;
+  }
+  .cat {
+    flex: 1;
+  }
+  .social {
+    flex: 1;
+  }
+}
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .container {
+    height: auto;
+  }
 }

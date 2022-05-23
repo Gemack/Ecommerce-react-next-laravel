@@ -1,7 +1,11 @@
 import styles from "./Latest.module.css";
-import { BsCart4 } from "react-icons/bs";
+import { BsCart4, BsFillCartXFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, removeProduct } from "../../Redux/cartSlice";
 
 const Latest = ({ data }) => {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const PF = "http://127.0.0.1:8000/";
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -28,9 +32,21 @@ const Latest = ({ data }) => {
               </div>
             </div>
             <div className={styles.overlay}>
-              <span className={styles.icons}>
-                <BsCart4 size={30} color="lime" />
-              </span>
+              {cart.products.some((p) => p.id === n.id) ? (
+                <span
+                  className={styles.icons}
+                  onClick={() => dispatch(removeProduct(n))}
+                >
+                  <BsFillCartXFill size={30} color="red" />
+                </span>
+              ) : (
+                <span
+                  className={styles.icons}
+                  onClick={() => dispatch(addProduct(n))}
+                >
+                  <BsCart4 size={30} color="lime" />
+                </span>
+              )}
             </div>
           </div>
         ))}

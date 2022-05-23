@@ -1,0 +1,139 @@
+.cartContainer {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+}
+
+.productInfo {
+  width: 70%;
+}
+
+.productInfo img {
+  width: 100px;
+}
+
+.select.decorated option:hover {
+  background: lime;
+  display: none;
+}
+.cart {
+  background: lime;
+  padding: 0 0.4rem;
+  height: 70vh;
+  width: 25%;
+  text-align: left;
+  box-shadow: 2px 2px 2px 3px rgba(163, 163, 163, 0.411);
+}
+.cart h3 {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.cart h4 {
+  color: white;
+  margin: 0.3rem;
+}
+
+.cart h4 span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.cart button {
+  display: block;
+  color: white;
+  background: limegreen;
+  width: 90%;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  transition: all 0.6s;
+}
+
+.cart button:hover {
+  background: green;
+  padding: 0.35rem;
+}
+.remove {
+  color: rgba(248, 29, 29, 0.842);
+  transition: all 0.6s;
+}
+.remove:hover {
+  color: red;
+}
+.empty {
+  cursor: not-allowed;
+}
+
+.payment {
+  text-align: center;
+}
+
+.paymentHead {
+  color: lime;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+.payment img {
+  display: block;
+  margin: auto;
+  width: 70%;
+  height: 40px;
+  object-fit: contain;
+  background: white;
+  cursor: pointer;
+  transition: all 1s;
+}
+.payment img:hover {
+  background: whitesmoke;
+}
+.payment img:last-child {
+  margin: 10px auto;
+}
+
+.form input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid lime;
+}
+
+.form input:focus {
+  outline: none;
+}
+/* Smartphone */
+@media (max-width: 700px) {
+  .cartContainer {
+    flex-direction: column;
+  }
+  .productInfo {
+    width: 100%;
+  }
+  .cart {
+    width: 100%;
+  }
+  .productInfo img {
+    width: 70px;
+  }
+}
+
+/* Tablet */
+
+@media (min-width: 701px) and (max-width: 868px) {
+  .cartContainer {
+    width: 100%;
+  }
+  .productInfo {
+    width: 60%;
+  }
+
+  .productInfo img {
+    width: 70px;
+  }
+  .cart {
+    width: 35%;
+  }
+}

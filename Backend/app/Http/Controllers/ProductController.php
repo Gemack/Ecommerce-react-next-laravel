@@ -27,6 +27,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate incomming request
         $fields = $request->validate([
             'category'=>'required',
             'name'=>'required',
@@ -37,6 +38,7 @@ class ProductController extends Controller
            
         ]);
         
+        // Resizing and storing image in serve
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename =time().'.'.$extention;

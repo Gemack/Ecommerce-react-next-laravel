@@ -51,13 +51,24 @@ const Profile = () => {
       );
       dispatchUser({ type: "UPDATE", payload: res.data.user });
       console.log(res);
-    } catch {
-      toast("User Update not successfull please check entry and try again", {
-        position: "top-center",
-        autoClose: 4000,
-        type: "error",
-        className: "toasty-error",
-      });
+    } catch (error) {
+      if (error.response.status === 401) {
+        toast("Token expired please login to get a new token", {
+          position: "top-right",
+          autoClose: 4000,
+          type: "error",
+        });
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.reload();
+      } else {
+        toast("User Update not successfull please check entry and try again", {
+          position: "top-center",
+          autoClose: 4000,
+          type: "error",
+          className: "toasty-error",
+        });
+      }
     }
   };
 

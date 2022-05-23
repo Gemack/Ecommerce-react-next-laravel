@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use Intervention\Image\Facades\Image;
 use App\Models\User;
-use Illuminate\Auth\Events\Failed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
@@ -13,8 +12,11 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // 
     public function register(Request $request)
     {
+        // Validate the incomming request
        $fields = $request->validate([
            'name'=>'required',
            'email'=>'required',
@@ -23,7 +25,7 @@ class AuthController extends Controller
            'password'=>'required|confirmed',
        ]);
 
-       
+    
        $user =User::create([
             "name"=>$fields['name'],
             "email"=>$fields['email'],
@@ -32,6 +34,7 @@ class AuthController extends Controller
             "password"=>bcrypt($fields['password']),
        ]);
 
+    //    Create access token
        $token = $user->createToken($user['email'])->plainTextToken;
 
        $response =[
@@ -87,6 +90,7 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
+        // Delete current user token
     auth()->user()->tokens()->delete();
     $response =[
         "message"=>'Logged out completed'
@@ -98,6 +102,9 @@ class AuthController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        // validate incomming request
+        
         $fields = $request->validate([
             'name'=>'required',
             'email'=>'required',
@@ -106,18 +113,23 @@ class AuthController extends Controller
             'password'=>'required|confirmed',
         ]);
 
+        // Check if the user has a profile picture, resize and save picture in server
         if($request->hasFile('profile')){
             $file = $request->file('profile');
             $extention = $file->getClientOriginalExtension();
             $filename =time().'.'.$extention;
             Image::make($file)->resize(300, 200)->save('image/profile/'. $filename, 100);
            
+
+            // Find and delete update picture 
             $user =User::find($id);
             $old_img =$user->profile;
          
             if($old_img){
                 unlink($old_img);
-            }        
+            }     
+            
+            // update user with the new profile picture if there is a new profile picture
             $user->update([
                 "name"=>$fields['name'],
                 "email"=>$fields['email'],
@@ -128,6 +140,8 @@ class AuthController extends Controller
            ]);
         }
 
+
+        //  Update user without profile picture
         $user =User::find($id);
         $user->update([
             "name"=>$fields['name'],

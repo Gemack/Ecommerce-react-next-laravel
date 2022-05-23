@@ -43,9 +43,22 @@
   transition: all 1.3s;
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
 }
+.buttonRemove {
+  background: red;
+  color: white;
+  margin: 0.8rem 0;
+  padding: 10px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  transition: all 1.3s;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+}
 
 .button:hover {
   background: green;
+}
+.buttonRemove:hover {
+  background: rgb(177, 3, 3);
 }
 @media (max-width: 600px) {
   .swiperContainerText h2 {

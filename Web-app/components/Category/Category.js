@@ -11,7 +11,7 @@ const Category = () => {
             <img src="/Men.jpg" alt="men" className={styles.img} />
             <div className={styles.info}>
               <h3>gentlemen</h3>
-              <Link passHref href="/">
+              <Link passHref href="/Men">
                 <button>Shop Now</button>
               </Link>
             </div>
@@ -21,7 +21,7 @@ const Category = () => {
           <img src="/Ladies.jpg" alt="men" className={styles.img} />
           <div className={styles.info}>
             <h3>ladies</h3>
-            <Link passHref href="/">
+            <Link passHref href="/Ladies">
               <button>Shop Now</button>
             </Link>
           </div>
@@ -30,7 +30,7 @@ const Category = () => {
           <img src="/Bag.jpg" alt="men" className={styles.img} />
           <div className={styles.info}>
             <h3>bags</h3>
-            <Link passHref href="/">
+            <Link passHref href="/Bags">
               <button>Shop Now</button>
             </Link>
           </div>
@@ -39,7 +39,7 @@ const Category = () => {
           <img src="/WristWatch.jpg" alt="men" className={styles.img} />
           <div className={styles.info}>
             <h3>wristwatch</h3>
-            <Link passHref href="/">
+            <Link passHref href="/WristWatch">
               <button>Shop Now</button>
             </Link>
           </div>

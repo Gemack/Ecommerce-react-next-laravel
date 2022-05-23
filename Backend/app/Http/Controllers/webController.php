@@ -18,4 +18,8 @@ class webController extends Controller
     $product= Product::all()->take(9);
     return $product;
   }
+  public function getByCat($id){
+    $product = product::where('category', $id)->get();
+    return $product;
+  }
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Feature from "../components/Feature/Feature";
 import Category from "../components/Category/Category";

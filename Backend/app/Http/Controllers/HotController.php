@@ -1,5 +1,9 @@
 <?php
 
+
+// THIS CONTROLLER DEALS WITH TRENDING SALES
+
+
 namespace App\Http\Controllers;
 
 use App\Models\Hot;
@@ -22,6 +26,7 @@ class HotController extends Controller
   
     public function update(Request $request, $id)
     {
+        // Validate the incomming request
         $fields = $request->validate([
             'name'=>'required',
             'image'=>'required',
@@ -31,15 +36,19 @@ class HotController extends Controller
            
         ]);
             
+
+        // dealing with request image
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename =time().'.'.$extention;
             Image::make($file)->resize(300, 200)->save('image/hot/'. $filename, 100); 
+            // find and unlink old image
             $product =Hot::find($id);
             $old_img =$product->image;
             if($old_img){
                 unlink($old_img);
             }  
+            // update profile picture with new image
             $product->update([
              "name"=>$fields['name'],
              "amount"=>$fields['amount'],
@@ -57,6 +66,8 @@ class HotController extends Controller
     
     public function store(Request $request)
     {
+
+        // Validate request
         $fields = $request->validate([
             'name'=>'required',
             'image'=>'required',
@@ -66,6 +77,7 @@ class HotController extends Controller
            
         ]);
         
+        // saving and resizing request image
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename =time().'.'.$extention;

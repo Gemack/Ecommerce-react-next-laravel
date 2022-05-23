@@ -47,12 +47,23 @@ const ProductPage = () => {
       await axios.post("/api/product", formData);
       Swal.fire("Created", "Product has been added succeessfully", "success");
       window.location.reload();
-    } catch {
-      toast("Invalid Data input, Product Not Added", {
-        position: "top-right",
-        autoClose: 4000,
-        type: "error",
-      });
+    } catch (error) {
+      if (error.response.status === 401) {
+        toast("Token expired please login to get a new token", {
+          position: "top-right",
+          autoClose: 4000,
+          type: "error",
+        });
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.reload();
+      } else {
+        toast("Invalid Data input, Product Not Added", {
+          position: "top-right",
+          autoClose: 5000,
+          type: "error",
+        });
+      }
     }
   };
 

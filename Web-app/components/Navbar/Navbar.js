@@ -3,8 +3,11 @@ import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { BsFacebook, BsInstagram, BsTwitter, BsCart4 } from "react-icons/bs";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-
+import { useSelector } from "react-redux";
 const Navbar = ({ cat }) => {
+  const cart = useSelector((state) => state.cart.products);
+  const size = Object.keys(cart).length;
+
   return (
     <nav className={styles.container}>
       <div className={styles.logo}>clean hand</div>
@@ -15,7 +18,7 @@ const Navbar = ({ cat }) => {
           </Link>
         </div>
         <div className={styles.navlink1}>
-          <Link href="/" passHref>
+          <Link href="/about" passHref>
             about
           </Link>
         </div>
@@ -26,23 +29,23 @@ const Navbar = ({ cat }) => {
               <MenuButton>CATEGORIES</MenuButton>
               <MenuList>
                 <MenuItem>
-                  <Link href="/" passHref>
+                  <Link href="/Bags" passHref>
                     Bags
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/" passHref>
+                  <Link href="/WristWatch" passHref>
                     WristWatch
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/" passHref>
+                  <Link href="/Ladies" passHref>
                     Ladies
                   </Link>
                 </MenuItem>
                 <MenuItem>
                   {" "}
-                  <Link href="/" passHref>
+                  <Link href="/Men" passHref>
                     Men
                   </Link>
                 </MenuItem>
@@ -89,10 +92,12 @@ const Navbar = ({ cat }) => {
           </div>
         )}
 
-        <div className={styles.cart}>
-          <BsCart4 size={30} color="white" />
-          <span className={styles.counter}>4</span>
-        </div>
+        <Link passHref href="/cart">
+          <div className={styles.cart}>
+            <BsCart4 size={30} color="white" />
+            <span className={styles.counter}>{size}</span>
+          </div>
+        </Link>
       </div>
     </nav>
   );

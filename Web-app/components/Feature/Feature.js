@@ -1,11 +1,15 @@
+import { useEffect } from "react";
 import styles from "./Feature.module.css";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { addProduct, removeProduct } from "../../Redux/cartSlice";
 
 const Feature = ({ data }) => {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const PF = "http://127.0.0.1:8000/";
   return (
     <section className={styles.container}>
@@ -25,9 +29,21 @@ const Feature = ({ data }) => {
                 <br />
                 <h3>{h.name}</h3>
                 <p>{h.description}</p>
-                <button className={styles.button}>
-                  <Link href="/"> buy now</Link>
-                </button>
+                {cart.products.some((p) => p.id === h.id) ? (
+                  <button
+                    className={styles.buttonRemove}
+                    onClick={() => dispatch(removeProduct(h))}
+                  >
+                    Remove from cart
+                  </button>
+                ) : (
+                  <button
+                    className={styles.button}
+                    onClick={() => dispatch(addProduct(h))}
+                  >
+                    Add to cart
+                  </button>
+                )}
               </div>
               <div className={styles.img}>
                 <img src={PF + h.image} alt={h.name} />

@@ -37,15 +37,26 @@ const UsersPage = () => {
       await axios.post("/api/register", data);
       Swal.fire("Created", "New Admin user has been created by you", "success");
     } catch (err) {
-      toast(
-        "User not Created Check entry again, and make sure Password and Confirmed Password are matched",
-        {
-          position: "bottom-center",
-          autoClose: 4000,
+      if (err.response.status === 401) {
+        toast("Token expired please login to get a new token", {
+          position: "top-right",
+          autoClose: 5000,
           type: "error",
-          className: "toasty-error",
-        }
-      );
+        });
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        window.location.reload();
+      } else {
+        toast(
+          "User not Created Check entry again, and make sure Password and Confirmed Password are matched",
+          {
+            position: "bottom-center",
+            autoClose: 4000,
+            type: "error",
+            className: "toasty-error",
+          }
+        );
+      }
     }
   };
 
